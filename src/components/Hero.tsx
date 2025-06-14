@@ -4,23 +4,23 @@ import { ArrowRight, Play, Sparkles, TrendingUp, Zap } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-white to-red-50">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-4 py-2 mb-8 animate-fade-in">
-          <Sparkles className="h-4 w-4 text-blue-600" />
+        <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-100 to-red-100 rounded-full px-4 py-2 mb-8 animate-fade-in">
+          <Sparkles className="h-4 w-4 text-orange-600" />
           <span className="text-sm font-medium text-gray-700">AI-Powered Marketing Solutions</span>
         </div>
 
         {/* Main Headline */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 bg-clip-text text-transparent">
             Transform Your Marketing
           </span>
           <br />
@@ -30,16 +30,16 @@ const Hero = () => {
         {/* Subheadline */}
         <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in">
           We combine cutting-edge AI technology with proven marketing strategies to deliver 
-          <span className="text-blue-600 font-semibold"> 10x better results</span> for your business.
+          <span className="text-orange-600 font-semibold"> 10x better results</span> for your business.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12 animate-fade-in">
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <Button size="lg" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
             Start Free Consultation
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button size="lg" variant="outline" className="border-2 border-gray-300 hover:border-blue-600 px-8 py-4 text-lg font-semibold hover:bg-blue-50 transition-all duration-300">
+          <Button size="lg" variant="outline" className="border-2 border-gray-300 hover:border-orange-600 px-8 py-4 text-lg font-semibold hover:bg-orange-50 transition-all duration-300">
             <Play className="mr-2 h-5 w-5" />
             Watch Demo
           </Button>
@@ -56,14 +56,14 @@ const Hero = () => {
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center mb-2">
-              <Zap className="h-6 w-6 text-blue-500 mr-2" />
+              <Zap className="h-6 w-6 text-orange-500 mr-2" />
               <span className="text-3xl font-bold text-gray-900">24/7</span>
             </div>
             <p className="text-gray-600">AI-Powered Automation</p>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center mb-2">
-              <Sparkles className="h-6 w-6 text-purple-500 mr-2" />
+              <Sparkles className="h-6 w-6 text-red-500 mr-2" />
               <span className="text-3xl font-bold text-gray-900">500+</span>
             </div>
             <p className="text-gray-600">Successful Campaigns</p>
