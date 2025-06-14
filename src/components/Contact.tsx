@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -49,7 +48,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: "hello@aimarketingpro.com",
+      details: "hello@creativenomads.com",
       description: "We respond within 2 hours"
     },
     {
@@ -61,13 +60,13 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gray-900">Ready to</span>
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Transform Your Marketing?</span>
+            <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent"> Transform Your Marketing?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Get a free consultation and discover how AI can revolutionize your marketing strategy. 
@@ -85,12 +84,12 @@ const Contact = () => {
               <CardContent className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-lg">
+                    <div className="bg-gradient-to-r from-orange-500 to-red-500 p-3 rounded-lg">
                       <info.icon className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">{info.title}</h3>
-                      <p className="text-blue-600 font-medium">{info.details}</p>
+                      <p className="text-orange-600 font-medium">{info.details}</p>
                       <p className="text-sm text-gray-600">{info.description}</p>
                     </div>
                   </div>
@@ -99,7 +98,7 @@ const Contact = () => {
             </Card>
 
             {/* Quick Stats */}
-            <Card className="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg border-0">
+            <Card className="bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg border-0">
               <CardContent className="p-6">
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
@@ -208,7 +207,7 @@ const Contact = () => {
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 text-lg font-semibold"
+                    className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-3 text-lg font-semibold"
                   >
                     {isSubmitting ? (
                       "Sending..."

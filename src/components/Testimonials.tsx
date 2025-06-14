@@ -7,7 +7,7 @@ const Testimonials = () => {
     {
       name: "Sarah Johnson",
       role: "CEO, TechStartup Inc",
-      content: "AI Marketing Pro transformed our entire marketing strategy. Their AI-powered campaigns increased our lead generation by 400% in just 3 months. The automation tools save us 20+ hours per week.",
+      content: "Creative Nomads transformed our entire marketing strategy. Their AI-powered campaigns increased our lead generation by 400% in just 3 months. The automation tools save us 20+ hours per week.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b704?w=100&h=100&fit=crop&crop=face"
     },
@@ -55,7 +55,7 @@ const Testimonials = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gray-900">What Our</span>
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Clients Say</span>
+            <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent"> Clients Say</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what business leaders are saying about our AI-powered marketing solutions.
@@ -68,7 +68,7 @@ const Testimonials = () => {
             <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 shadow-lg bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
               {/* Quote Icon */}
               <div className="absolute top-4 right-4 opacity-10">
-                <Quote className="h-12 w-12 text-blue-500" />
+                <Quote className="h-12 w-12 text-orange-500" />
               </div>
               
               <CardContent className="p-6">
@@ -103,12 +103,12 @@ const Testimonials = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl p-8 text-white max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 text-white max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
             <p className="text-lg opacity-90 mb-6">
               Let's discuss how AI-powered marketing can transform your business and deliver exceptional results.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Schedule Your Free Consultation
             </button>
           </div>
