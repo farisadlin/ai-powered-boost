@@ -1,0 +1,193 @@
+
+import { Zap, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+    services: [
+      "AI Chatbot Development",
+      "Predictive Analytics",
+      "Marketing Automation",
+      "Content Generation",
+      "Lead Qualification",
+      "Customer Segmentation"
+    ],
+    company: [
+      "About Us",
+      "Our Team",
+      "Careers",
+      "Case Studies",
+      "Blog",
+      "Contact"
+    ],
+    resources: [
+      "AI Marketing Guide",
+      "Free Tools",
+      "Webinars",
+      "Documentation",
+      "Support Center",
+      "ROI Calculator"
+    ],
+    legal: [
+      "Privacy Policy",
+      "Terms of Service",
+      "Cookie Policy",
+      "GDPR Compliance",
+      "Security",
+      "Refund Policy"
+    ]
+  };
+
+  const socialLinks = [
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Instagram, href: "#", label: "Instagram" }
+  ];
+
+  return (
+    <footer className="bg-gray-900 text-white">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
+                <Zap className="h-6 w-6 text-white" />
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                AI Marketing Pro
+              </span>
+            </div>
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              We're pioneering the future of marketing with AI-powered automation that delivers exceptional results. 
+              Transform your business with intelligent marketing solutions that work 24/7.
+            </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center text-gray-400">
+                <Phone className="h-4 w-4 mr-3" />
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div className="flex items-center text-gray-400">
+                <Mail className="h-4 w-4 mr-3" />
+                <span>hello@aimarketingpro.com</span>
+              </div>
+              <div className="flex items-center text-gray-400">
+                <MapPin className="h-4 w-4 mr-3" />
+                <span>123 Innovation Drive, Tech City, TC 12345</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Services</h3>
+            <ul className="space-y-3">
+              {footerLinks.services.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Company</h3>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Resources</h3>
+            <ul className="space-y-3">
+              {footerLinks.resources.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Legal</h3>
+            <ul className="space-y-3">
+              {footerLinks.legal.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-bold mb-4">Stay Ahead with AI Marketing Insights</h3>
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              Get the latest AI marketing strategies, automation tips, and industry insights delivered to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg text-gray-900 border-0 focus:ring-2 focus:ring-white"
+              />
+              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <div className="border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} AI Marketing Pro. All rights reserved. Powered by cutting-edge AI technology.
+            </p>
+            
+            {/* Social Links */}
+            <div className="flex items-center space-x-4 mt-4 md:mt-0">
+              <span className="text-gray-400 text-sm mr-2">Follow us:</span>
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
