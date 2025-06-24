@@ -1,5 +1,12 @@
-
-import { Zap, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +18,7 @@ const Footer = () => {
       "Marketing Automation",
       "Content Generation",
       "Lead Qualification",
-      "Customer Segmentation"
+      "Customer Segmentation",
     ],
     company: [
       "About Us",
@@ -19,7 +26,7 @@ const Footer = () => {
       "Careers",
       "Case Studies",
       "Blog",
-      "Contact"
+      "Contact",
     ],
     resources: [
       "AI Marketing Guide",
@@ -27,7 +34,7 @@ const Footer = () => {
       "Webinars",
       "Documentation",
       "Support Center",
-      "ROI Calculator"
+      "ROI Calculator",
     ],
     legal: [
       "Privacy Policy",
@@ -35,15 +42,15 @@ const Footer = () => {
       "Cookie Policy",
       "GDPR Compliance",
       "Security",
-      "Refund Policy"
-    ]
+      "Refund Policy",
+    ],
   };
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" }
+    { icon: Instagram, href: "#", label: "Instagram" },
   ];
 
   return (
@@ -54,8 +61,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <img 
-                src="/lovable-uploads/6bdc31da-a4cc-406f-8454-af76f1f73dde.png" 
+              <img
+                src="/lovable-uploads/6bdc31da-a4cc-406f-8454-af76f1f73dde.png"
                 alt="Creative Nomads Logo"
                 className="h-8 w-8 object-contain"
               />
@@ -64,10 +71,11 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              We're pioneering the future of marketing with AI-powered automation that delivers exceptional results. 
-              Transform your business with intelligent marketing solutions that work 24/7.
+              We're pioneering the future of marketing with AI-powered
+              automation that delivers exceptional results. Transform your
+              business with intelligent marketing solutions that work 24/7.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center text-gray-400">
@@ -91,7 +99,10 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
                     {link}
                   </a>
                 </li>
@@ -105,7 +116,10 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
                     {link}
                   </a>
                 </li>
@@ -119,7 +133,10 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
                     {link}
                   </a>
                 </li>
@@ -133,7 +150,10 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
                     {link}
                   </a>
                 </li>
@@ -145,9 +165,12 @@ const Footer = () => {
         {/* Newsletter Section */}
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">Stay Ahead with AI Marketing Insights</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Stay Ahead with AI Marketing Insights
+            </h3>
             <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
-              Get the latest AI marketing strategies, automation tips, and industry insights delivered to your inbox.
+              Get the latest AI marketing strategies, automation tips, and
+              industry insights delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
               <input
@@ -168,9 +191,10 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Creative Nomads. All rights reserved. Powered by cutting-edge AI technology.
+              © {currentYear} Creative Nomads. All rights reserved. Powered by
+              cutting-edge AI technology.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex items-center space-x-4 mt-4 md:mt-0">
               <span className="text-gray-400 text-sm mr-2">Follow us:</span>
