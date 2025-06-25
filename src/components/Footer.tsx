@@ -7,19 +7,14 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import { useServices } from "@/hooks/useServices";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { data: services = [] } = useServices();
 
   const footerLinks = {
-    services: [
-      "AI Chatbot Development",
-      "Predictive Analytics",
-      "Marketing Automation",
-      "Content Generation",
-      "Lead Qualification",
-      "Customer Segmentation",
-    ],
+    services: services.map(service => service.title),
     company: [
       "About Us",
       "Our Team",
@@ -97,16 +92,37 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              {services.length > 0 ? (
+                services.slice(0, 6).map((service) => (
+                  <li key={service._id}>
+                    <a
+                      href="#services"
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {service.title}
+                    </a>
+                  </li>
+                ))
+              ) : (
+                // Fallback untuk saat data belum dimuat
+                [
+                  "AI Chatbot Development",
+                  "Predictive Analytics",
+                  "Marketing Automation",
+                  "Content Generation",
+                  "Lead Qualification",
+                  "Customer Segmentation",
+                ].map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href="#services"
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                ))
+              )}
             </ul>
           </div>
 
