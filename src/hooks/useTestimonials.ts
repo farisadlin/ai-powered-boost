@@ -40,11 +40,11 @@ const fetchTestimonials = async (
 
 export const useTestimonials = (featuredOnly?: boolean) => {
   return useQuery({
-    queryKey: ["testimonials", featuredOnly],
+    queryKey: ['testimonials', featuredOnly],
     queryFn: () => fetchTestimonials(featuredOnly),
     staleTime: 0, // Always fetch fresh data
     gcTime: 0, // Don't cache data
     retry: 3,
     retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
-  });
-};
+  })
+}
