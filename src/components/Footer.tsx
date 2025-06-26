@@ -14,7 +14,7 @@ const Footer = () => {
   const { data: services = [] } = useServices();
 
   const footerLinks = {
-    services: services.map(service => service.title),
+    services: services.map((service) => service.title),
     company: [
       "About Us",
       "Our Team",
@@ -58,11 +58,11 @@ const Footer = () => {
             <div className="flex items-center space-x-2 mb-6">
               <img
                 src="/lovable-uploads/6bdc31da-a4cc-406f-8454-af76f1f73dde.png"
-                alt="Creative Nomads Logo"
+                alt="Auto Growth Logo"
                 className="h-8 w-8 object-contain"
               />
               <span className="text-xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-                Creative Nomads
+                Auto Growth
               </span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
@@ -79,7 +79,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-gray-400">
                 <Mail className="h-4 w-4 mr-3" />
-                <span>hello@creativenomads.com</span>
+                <span>contact@autogrowth.io</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <MapPin className="h-4 w-4 mr-3" />
@@ -92,37 +92,35 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-3">
-              {services.length > 0 ? (
-                services.slice(0, 6).map((service) => (
-                  <li key={service._id}>
-                    <a
-                      href="#services"
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
-                    >
-                      {service.title}
-                    </a>
-                  </li>
-                ))
-              ) : (
-                // Fallback untuk saat data belum dimuat
-                [
-                  "AI Chatbot Development",
-                  "Predictive Analytics",
-                  "Marketing Automation",
-                  "Content Generation",
-                  "Lead Qualification",
-                  "Customer Segmentation",
-                ].map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href="#services"
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))
-              )}
+              {services.length > 0
+                ? services.slice(0, 6).map((service) => (
+                    <li key={service._id}>
+                      <a
+                        href="#services"
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                      >
+                        {service.title}
+                      </a>
+                    </li>
+                  ))
+                : // Fallback untuk saat data belum dimuat
+                  [
+                    "AI Chatbot Development",
+                    "Predictive Analytics",
+                    "Marketing Automation",
+                    "Content Generation",
+                    "Lead Qualification",
+                    "Customer Segmentation",
+                  ].map((link, index) => (
+                    <li key={index}>
+                      <a
+                        href="#services"
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
             </ul>
           </div>
 
@@ -207,7 +205,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Creative Nomads. All rights reserved. Powered by
+              © {currentYear} Auto Growth. All rights reserved. Powered by
               cutting-edge AI technology.
             </p>
 

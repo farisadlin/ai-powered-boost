@@ -16,7 +16,7 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/6bdc31da-a4cc-406f-8454-af76f1f73dde.png" 
-              alt="Creative Nomads Logo" 
+              alt="Auto Growth Logo" 
               className="h-10 w-auto"
             />
           </div>

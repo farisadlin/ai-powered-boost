@@ -5,38 +5,42 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, Clock, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       // EmailJS configuration from environment variables
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-      
+
       if (!serviceId || !templateId || !publicKey) {
-        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+        throw new Error(
+          "EmailJS configuration is missing. Please check your environment variables."
+        );
       }
-      
+
       // Send email using EmailJS
       const result = await emailjs.send(
         serviceId,
@@ -47,25 +51,27 @@ const Contact = () => {
           company: formData.company,
           phone: formData.phone,
           message: formData.message,
-          to_name: 'AutoGrowth Team',
+          to_name: "AutoGrowth Team",
         },
         publicKey
       );
-      
-      console.log('Email sent successfully:', result.text);
-      
+
+      console.log("Email sent successfully:", result.text);
+
       toast({
         title: "Message Sent Successfully!",
-        description: "We'll get back to you within 24 hours with a customized AI marketing strategy.",
+        description:
+          "We'll get back to you within 24 hours with a customized AI marketing strategy.",
       });
-      
-      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+
+      setFormData({ name: "", email: "", company: "", phone: "", message: "" });
     } catch (error) {
-      console.error('Failed to send email:', error);
-      
+      console.error("Failed to send email:", error);
+
       toast({
         title: "Failed to Send Message",
-        description: "There was an error sending your message. Please try again or contact us directly.",
+        description:
+          "There was an error sending your message. Please try again or contact us directly.",
         variant: "destructive",
       });
     } finally {
@@ -78,34 +84,40 @@ const Contact = () => {
       icon: Phone,
       title: "Call Us",
       details: "+1 (555) 123-4567",
-      description: "Mon-Fri 9am-6pm EST"
+      description: "Mon-Fri 9am-6pm EST",
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: "hello@creativenomads.com",
-      description: "We respond within 2 hours"
+      details: "contact@autogrowth.io",
+      description: "We respond within 2 hours",
     },
     {
       icon: MapPin,
       title: "Visit Us",
       details: "123 Innovation Drive, Tech City, TC 12345",
-      description: "Schedule an appointment"
-    }
+      description: "Schedule an appointment",
+    },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-gray-50 to-orange-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gray-900">Ready to</span>
-            <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent"> Transform Your Marketing?</span>
+            <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+              {" "}
+              Transform Your Marketing?
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get a free consultation and discover how AI can revolutionize your marketing strategy. 
-            Let's build something amazing together.
+            Get a free consultation and discover how AI can revolutionize your
+            marketing strategy. Let's build something amazing together.
           </p>
         </div>
 
@@ -114,7 +126,9 @@ const Contact = () => {
           <div className="lg:col-span-1 space-y-6">
             <Card className="bg-white shadow-lg border-0">
               <CardHeader>
-                <CardTitle className="text-xl font-bold text-gray-900">Get In Touch</CardTitle>
+                <CardTitle className="text-xl font-bold text-gray-900">
+                  Get In Touch
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 {contactInfo.map((info, index) => (
@@ -123,9 +137,15 @@ const Contact = () => {
                       <info.icon className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">{info.title}</h3>
-                      <p className="text-orange-600 font-medium">{info.details}</p>
-                      <p className="text-sm text-gray-600">{info.description}</p>
+                      <h3 className="font-semibold text-gray-900">
+                        {info.title}
+                      </h3>
+                      <p className="text-orange-600 font-medium">
+                        {info.details}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {info.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -159,7 +179,8 @@ const Contact = () => {
                   Start Your AI Marketing Journey
                 </CardTitle>
                 <p className="text-gray-600">
-                  Fill out the form below and we'll create a custom AI marketing strategy for your business.
+                  Fill out the form below and we'll create a custom AI marketing
+                  strategy for your business.
                 </p>
               </CardHeader>
               <CardContent>
@@ -239,8 +260,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-3 text-lg font-semibold"
                   >
@@ -255,8 +276,8 @@ const Contact = () => {
                   </Button>
 
                   <p className="text-sm text-gray-600 text-center">
-                    By submitting this form, you agree to receive marketing communications from us. 
-                    You can unsubscribe at any time.
+                    By submitting this form, you agree to receive marketing
+                    communications from us. You can unsubscribe at any time.
                   </p>
                 </form>
               </CardContent>
