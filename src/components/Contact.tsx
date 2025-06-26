@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, Clock, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,16 +27,50 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours with a customized AI marketing strategy.",
-    });
-    
-    setFormData({ name: '', email: '', company: '', phone: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      // EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+      }
+      
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company,
+          phone: formData.phone,
+          message: formData.message,
+          to_name: 'AutoGrowth Team',
+        },
+        publicKey
+      );
+      
+      console.log('Email sent successfully:', result.text);
+      
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We'll get back to you within 24 hours with a customized AI marketing strategy.",
+      });
+      
+      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      
+      toast({
+        title: "Failed to Send Message",
+        description: "There was an error sending your message. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
