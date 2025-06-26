@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -14,11 +15,13 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/6bdc31da-a4cc-406f-8454-af76f1f73dde.png" 
-              alt="Auto Growth Logo" 
-              className="h-10 w-auto"
-            />
+            <Link to="/">
+              <img 
+                src="/lovable-uploads/6bdc31da-a4cc-406f-8454-af76f1f73dde.png" 
+                alt="Auto Growth Logo" 
+                className="h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -32,6 +35,9 @@ const Header = () => {
             <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
               Testimonials
             </a>
+            <Link to="/blog" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+              Blog
+            </Link>
             <a href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
               Contact
             </a>
@@ -62,6 +68,9 @@ const Header = () => {
               <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
                 Testimonials
               </a>
+              <Link to="/blog" className="text-gray-700 hover:text-orange-600 transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+                Blog
+              </Link>
               <a href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
                 Contact
               </a>
