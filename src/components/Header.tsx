@@ -26,21 +26,21 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+            <Link to="/#services" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
               Services
-            </a>
-            <a href="#about" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+            </Link>
+            <Link to="/#about" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
               About
-            </a>
-            <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+            </Link>
+            <Link to="/#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
               Testimonials
-            </a>
+            </Link>
             <Link to="/blog" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
               Blog
             </Link>
-            <a href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+            <Link to="/#contact" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
               Contact
-            </a>
+            </Link>
             <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6">
               Get Started
             </Button>
@@ -59,21 +59,21 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-gray-200 shadow-lg animate-fade-in">
             <nav className="flex flex-col space-y-4 p-4">
-              <a href="#services" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+              <Link to="/#services" className="text-gray-700 hover:text-orange-600 transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 Services
-              </a>
-              <a href="#about" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+              </Link>
+              <Link to="/#about" className="text-gray-700 hover:text-orange-600 transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 About
-              </a>
-              <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+              </Link>
+              <Link to="/#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 Testimonials
-              </a>
+              </Link>
               <Link to="/blog" className="text-gray-700 hover:text-orange-600 transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 Blog
               </Link>
-              <a href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+              <Link to="/#contact" className="text-gray-700 hover:text-orange-600 transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 Contact
-              </a>
+              </Link>
               <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white w-full">
                 Get Started
               </Button>
