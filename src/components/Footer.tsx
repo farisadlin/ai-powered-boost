@@ -56,11 +56,6 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <img
-                src="/lovable-uploads/6bdc31da-a4cc-406f-8454-af76f1f73dde.png"
-                alt="Auto Growth Logo"
-                className="h-8 w-8 object-contain"
-              />
               <span className="text-xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
                 Auto Growth
               </span>
@@ -173,29 +168,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">
-              Stay Ahead with AI Marketing Insights
-            </h3>
-            <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
-              Get the latest AI marketing strategies, automation tips, and
-              industry insights delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 border-0 focus:ring-2 focus:ring-white"
-              />
-              <button className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Subscribe
-              </button>
-            </div>
           </div>
         </div>
       </div>

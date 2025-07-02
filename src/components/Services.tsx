@@ -1,6 +1,22 @@
-
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, BarChart3, Target, Megaphone, Brain, Rocket, Zap, Users, TrendingUp, Shield } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Bot,
+  BarChart3,
+  Target,
+  Megaphone,
+  Brain,
+  Rocket,
+  Zap,
+  Users,
+  TrendingUp,
+  Shield,
+} from "lucide-react";
 import { useServices } from "@/hooks/useServices";
 import { AlertCircle } from "lucide-react";
 
@@ -8,7 +24,9 @@ const Services = () => {
   const { data: services = [], isLoading, isError, error } = useServices();
 
   // Icon mapping untuk mengkonversi string icon dari Sanity ke komponen Lucide
-  const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
+  const iconMap: {
+    [key: string]: React.ComponentType<{ className?: string }>;
+  } = {
     Bot,
     BarChart3,
     Target,
@@ -23,7 +41,7 @@ const Services = () => {
 
   if (isLoading) {
     return (
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="animate-pulse">
@@ -57,9 +75,13 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Unable to load services</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Unable to load services
+            </h3>
             <p className="text-gray-600">
-              {error instanceof Error ? error.message : 'Something went wrong while fetching services.'}
+              {error instanceof Error
+                ? error.message
+                : "Something went wrong while fetching services."}
             </p>
           </div>
         </div>
@@ -68,7 +90,10 @@ const Services = () => {
   }
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section
+      id="services"
+      className="py-20 bg-gradient-to-br from-gray-50 to-orange-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -78,7 +103,8 @@ const Services = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Revolutionize your marketing with our cutting-edge AI solutions that work around the clock to grow your business.
+            Revolutionize your marketing with our cutting-edge AI solutions that
+            work around the clock to grow your business.
           </p>
         </div>
 
@@ -87,7 +113,10 @@ const Services = () => {
           {services.map((service) => {
             const IconComponent = iconMap[service.icon] || Bot; // Fallback ke Bot jika icon tidak ditemukan
             return (
-              <Card key={service._id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-gray-50">
+              <Card
+                key={service._id}
+                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-gray-50"
+              >
                 <CardHeader className="pb-4">
                   <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="h-7 w-7 text-white" />
@@ -102,7 +131,10 @@ const Services = () => {
                   </CardDescription>
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-700">
+                      <li
+                        key={featureIndex}
+                        className="flex items-center text-sm text-gray-700"
+                      >
                         <div className="w-1.5 h-1.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-3"></div>
                         {feature}
                       </li>

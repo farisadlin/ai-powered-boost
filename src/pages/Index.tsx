@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "@/components/Header";
@@ -19,7 +18,7 @@ const Index = () => {
       if (element) {
         // Small delay to ensure the page is fully rendered
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }, 100);
       }
     }
@@ -30,7 +29,7 @@ const Index = () => {
       <Header />
       <Hero />
       <Services />
-      <About />
+      {/* <About /> */}
       <Testimonials />
       <Contact />
       <Footer />
