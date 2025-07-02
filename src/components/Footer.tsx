@@ -8,10 +8,12 @@ import {
   Linkedin,
 } from "lucide-react";
 import { useServices } from "@/hooks/useServices";
+import { useContact } from "@/hooks/useContact";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { data: services = [] } = useServices();
+  const { data: contactInfo } = useContact();
 
   const footerLinks = {
     services: services.map((service) => service.title),
@@ -70,15 +72,21 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center text-gray-400">
                 <Phone className="h-4 w-4 mr-3" />
-                <span>+1 (555) 123-4567</span>
+                <span>{contactInfo?.phone || "+1 (555) 123-4567"}</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Mail className="h-4 w-4 mr-3" />
-                <span>contact@autogrowth.io</span>
+                <span>{contactInfo?.email || "contact@autogrowth.io"}</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <MapPin className="h-4 w-4 mr-3" />
-                <span>123 Innovation Drive, Tech City, TC 12345</span>
+                <span>
+                  {contactInfo?.address
+                    ? typeof contactInfo.address === 'string'
+                      ? contactInfo.address
+                      : `${contactInfo.address.street}, ${contactInfo.address.city}, ${contactInfo.address.state} ${contactInfo.address.zipCode}`
+                    : "123 Innovation Drive, Tech City, TC 12345"}
+                </span>
               </div>
             </div>
           </div>

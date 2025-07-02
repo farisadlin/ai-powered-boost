@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, Clock, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useContact } from "@/hooks/useContact";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -17,6 +18,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { data: contactInfo, isLoading: isContactLoading } = useContact();
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -79,23 +81,26 @@ const Contact = () => {
     }
   };
 
-  const contactInfo = [
+  // Dynamic contact information from CMS with fallbacks
+  const contactInfoItems = [
     {
       icon: Phone,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
-      description: "Mon-Fri 9am-6pm EST",
+      details: contactInfo?.phone || "+1 (555) 123-4567",
+      description: contactInfo?.businessHours?.monday || "Mon-Fri 9am-6pm EST",
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: "contact@autogrowth.io",
+      details: contactInfo?.email || "contact@autogrowth.io",
       description: "We respond within 2 hours",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "123 Innovation Drive, Tech City, TC 12345",
+      details: contactInfo?.address 
+        ? `${contactInfo.address.street}, ${contactInfo.address.city}, ${contactInfo.address.state} ${contactInfo.address.zipCode}`
+        : "123 Innovation Drive, Tech City, TC 12345",
       description: "Schedule an appointment",
     },
   ];
@@ -131,7 +136,7 @@ const Contact = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                {contactInfo.map((info, index) => (
+                {contactInfoItems.map((info, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <div className="bg-gradient-to-r from-orange-500 to-red-500 p-3 rounded-lg">
                       <info.icon className="h-5 w-5 text-white" />
